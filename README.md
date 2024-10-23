@@ -32,6 +32,7 @@ Ejemplo práctico de uso de overlays:
 
 Supongamos que tienes una aplicación en Kubernetes y quieres desplegarla en tres entornos: desarrollo, pruebas y producción. Con Kustomize, la estructura del repositorio se vería algo así:
 
+``` bash 
 ├── base
 │   ├── deployment.yaml       # Definición base de la aplicación
 │   ├── service.yaml          # Configuración de servicio común
@@ -46,6 +47,8 @@ Supongamos que tienes una aplicación en Kubernetes y quieres desplegarla en tre
 │   └── prod
 │       ├── kustomization.yaml  # Personalizaciones para prod
 │       └── patches.yaml        # Parches específicos para prod
+
+```
 
 	•	En base/, defines la configuración común para todos los entornos.
 	•	En overlays/dev/, puedes sobrescribir configuraciones como la cantidad de réplicas, habilitar registros de depuración, o usar una versión más nueva de la aplicación.
